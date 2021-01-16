@@ -1,8 +1,7 @@
 // Creates NeuralNetwork
 const questionNetwork = new brain.NeuralNetwork();
-// Initial Values for Pitch and Time and Starts the Pitch Array
-var time = 0;
-var pitchArray = []
+var pitchArray = [1.5,2,3,4,5,6]]
+
 questionNetwork.train([
   { input: [-164,101,23,20,4,4], output: {Question: 1}},
   { input: [7,4,-332,-180,-9,0,0], output: {Question: 1}}, 
@@ -16,25 +15,5 @@ questionNetwork.train([
   { input: [-115,0,265,265,0,74,-39,164,-8,31,31,31,0,-61,3,3,-157,-157,0,9,-23,73,73], output: {Sad: 1}}
 ]);
 
-// Runs Every Second Using Interval
-function everySecond() {
-  // Pitch & Time Changes and Shows Time on Console
-  time++;
-  if (time < 5) {
-    console.log(time);
-  }
-  // Adds the Pitch Values to pitchArray
-  pitchArray = [1.5,2,3,4,5,6];
-  // After 3 Seconds, Calculates Probability for Question
-  if (time == 4) {
-    console.log(pitchArray)
-    const questionResult = questionNetwork.run(pitchArray)
-    console.log(questionResult)
-    
-  }
-
-}
-
-setInterval(everySecond, 1000)
-
-
+const questionResult = questionNetwork.run(pitchArray)
+console.log(questionResult)
