@@ -1,6 +1,6 @@
 // Creates NeuralNetwork
 const questionNetwork = new brain.NeuralNetwork();
-var pitchArray = [1.5,2,3,4,5,6]]
+var pitchArray = [1.5,2,3,4,5,6]
 
 questionNetwork.train([
   { input: [-164,101,23,20,4,4], output: {Question: 1}},
